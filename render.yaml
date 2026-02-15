@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: hms-backend
+    env: java
+    plan: free
+    branch: main
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: JWT_SECRET
+        generateValue: true
