@@ -31,7 +31,7 @@ public class SecurityConfig {
 
         http.csrf(csrf -> csrf.disable());
 
-        // ✅ Enable CORS
+       
         http.cors(cors -> cors.configurationSource(corsConfigurationSource()));
 
         http.sessionManagement(session ->
@@ -51,7 +51,7 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // ✅ CORS Configuration
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
     
